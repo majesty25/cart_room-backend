@@ -7,7 +7,7 @@ import { v4 as uuid } from "uuid";
 export const getAllProducts = async (req: Request, res: Response) => {
   try {
     const page: number = parseInt(req.query.page as string) || 1;
-    const pageSize: number = parseInt(req.query.pageSize as string) || 10;
+    const pageSize: number = parseInt(req.query.pageSize as string) || 20;
 
     const total: number = await Product.countDocuments();
     const products: IProduct[] = await Product.find()
